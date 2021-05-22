@@ -6,21 +6,21 @@ const { Student, Campus } = require('../database/models');
 const ash = require('express-async-handler');
 
 /** GET ALL STUDENTS: then/catch */
-// router.get('/', function(req, res, next) {
-//   Student.findAll({include: [Campus]})
-//     .then(students => res.status(200).json(students))
-//     .catch(err => next(err));
-// });
+router.get('/', function(req, res, next) {
+  Student.findAll({include: [Campus]})
+    .then(students => res.status(200).json(students))
+    .catch(err => next(err));
+});
 
 /** GET ALL STUDENTS: async/await */
-// router.get('/', async (req, res, next) => {
-//   try {
-//     let students = await Student.findAll({include: [Campus]});
-//     res.status(200).json(students);
-//   } catch(err) {
-//     next(err);
-//   }
-// });
+router.get('/', async (req, res, next) => {
+  try {
+    let students = await Student.findAll({include: [Campus]});
+    res.status(200).json(students);
+  } catch(err) {
+    next(err);
+  }
+});
 
 /** GET ALL STUDENTS: express-async-handler (ash) */
 // automatically catches any error and sends to middleware
@@ -55,14 +55,14 @@ router.delete('/:id', function(req, res, next) {
 });
 
 /******************* EDIT *********************/
-
-router.put('/:id', ash(async(req, res) => {
-  await Student.update(req.body,
-        { where: {id: req.params.id} }
-  );
-  let student = await Student.findByPk(req.params.id);
-  res.status(201).json(student);
-}));
+//
+// router.put('/:id', ash(async(req, res) => {
+//   await Student.update(req.body,
+//         { where: {id: req.params.id} }
+//   );
+//   let student = await Student.findByPk(req.params.id);
+//   res.status(201).json(student);
+// }));
 
 // Export our router, so that it can be imported to construct our apiRouter;
 module.exports = router;

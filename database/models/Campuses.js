@@ -1,8 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const Campus = db.define("campus", {
-
+const Campuses = db.define("campuses", {
     name: {
         type: Sequelize.STRING,
         allowNull: false
@@ -10,7 +9,7 @@ const Campus = db.define("campus", {
 
     imageUrl: {
         type: Sequelize.STRING,
-        defaultValue: '~./collegeCampus.jpeg'
+        defaultValue: './collegeCampus.jpeg'
     },
 
     address: {
@@ -23,4 +22,4 @@ const Campus = db.define("campus", {
 
 });
 
-module.exports = Campus;
+module.exports = Campuses;

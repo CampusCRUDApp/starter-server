@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-const Student = db.define("student", {
+const Students = db.define("students", {
 
     firstname: {
         type: Sequelize.STRING,
@@ -14,17 +14,13 @@ const Student = db.define("student", {
     },
     email: {
         type: Sequelize.STRING,
-        isEmail: true,
-    },
-    email: {
-        type: Sequelize.STRING,
         validate: {
             isEmail: true
         }
     },
     imageUrl: {
         type: Sequelize.STRING,
-        defaultValue: './collegeCampus'
+        defaultValue: './'
     },
     gpa: {
         type: Sequelize.STRING,
@@ -33,22 +29,8 @@ const Student = db.define("student", {
             min:0.0,
             max:4.0
         }
-    }
+    }}
 
+);
 
-
-
-
-
-});
-// },
-//     setterMethods: {
-//         setCampus(value){
-//             this.setDataValue("campus", value);
-//         }
-//
-//     }
-
-
-
-module.exports = Student;
+module.exports = Students;

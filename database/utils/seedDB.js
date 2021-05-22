@@ -25,19 +25,19 @@ const seedDB = async () => {
     });
 
 
-    const dummy_students3 = await Student.create({
+    const dummy_students3 = await Students.create({
 		 firstname: "Jenna",
          lastname: "Mccormick",
 		 gpa:"4.0",
 		 email:"iloveme@me.com"
     });
-    const dummy_students4 = await Student.create({
+    const dummy_students4 = await Students.create({
         firstname: "za",
         lastname: "lo",
         gpa:"4.0",
         email:"iloveme@me.com"
     });
-    const dummy_students5 = await Student.create({
+    const dummy_students5 = await Students.create({
         firstname: "henry",
         lastname: "lo",
         gpa:"4.0",
@@ -46,8 +46,11 @@ const seedDB = async () => {
     console.log(dummy_campus2 + "   is");
     console.log(dummy_campus2 + "   is");
 
-     dummy_students2.setCampus(dummy_campus2);
+    await dummy_students.setCampus(dummy_campus2);
+    await dummy_students2.setCampus(dummy_campus2);
     await dummy_students3.setCampus(dummy_campus2);
+    await dummy_students4.setCampus(dummy_campus);
+    await dummy_students5.setCampus(dummy_campus);
 
 
 }

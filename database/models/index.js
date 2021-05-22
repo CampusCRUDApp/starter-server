@@ -2,20 +2,22 @@
 
 const Student = require('./student');
 const Campus = require('./campus');
-//multiple
+
 const Campuses = require('./campuses');
 const Students = require('./students');
 
-
 Student.belongsTo(Campus);
-Students.belongsTo(Campus);
+Campus.hasMany(Student);
 
-Campus.hasMany(Students);
+
+
+Students.belongsTo(Campuses);
+Campuses.hasMany(Student);
 Campuses.hasMany(Students);
 
 module.exports = {
-  Student,
-  Campus,
-  Students,
-  Campuses
+    Student,
+    Campus,
+    Campuses,
+    Students
 };

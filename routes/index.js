@@ -4,6 +4,8 @@ const router = express.Router();
 // Subrouters;
 const studentsRouter = require('./students');
 const campusesRouter = require('./campuses');
+const addCampusRouter = require('./deleteCampus');
+const deleteCampusRouter = require('./addNewCampus');
 
 //singular
 const campusRouter = require('./campus');

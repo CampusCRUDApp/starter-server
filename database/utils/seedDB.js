@@ -16,16 +16,12 @@ const seedDB = async () => {
     const dummy_students = await Students.create({
         firstname: "Joe",
         lastname: "Shmo",
-        gpa: "3.75",
-        email: "email@email.com"
     });
 
 
     const dummy_students2 = await Students.create({
         firstname: "April",
-        lastname: "Mickheal",
-        gpa: "2.8",
-        email: "email@email.com"
+        lastname: "Mickheal"
     });
 
 
@@ -36,14 +32,14 @@ const seedDB = async () => {
 		 email:"iloveme@me.com"
     });
     const dummy_students4 = await Students.create({
-        firstname: "Za",
-        lastname: "Lo",
+        firstname: "za",
+        lastname: "lo",
         gpa:"4.0",
         email:"iloveme@me.com"
     });
     const dummy_students5 = await Students.create({
-        firstname: "Henry",
-        lastname: "Lo",
+        firstname: "henry",
+        lastname: "lo",
         gpa:"4.0",
         email:"iloveme@me.com"
     });

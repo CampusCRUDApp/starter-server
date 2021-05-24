@@ -56,13 +56,13 @@ router.delete('/:id', function(req, res, next) {
 
 /******************* EDIT *********************/
 //
-// router.put('/:id', ash(async(req, res) => {
-//   await Student.update(req.body,
-//         { where: {id: req.params.id} }
-//   );
-//   let student = await Student.findByPk(req.params.id);
-//   res.status(201).json(student);
-// }));
+router.put('/:id', ash(async(req, res) => {
+  await Student.update(req.body,
+        { where: {id: req.params.id} }
+  );
+  let student = await Student.findByPk(req.params.id);
+  res.status(201).json(student);
+}));
 
 // Export our router, so that it can be imported to construct our apiRouter;
 module.exports = router;
